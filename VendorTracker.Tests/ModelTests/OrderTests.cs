@@ -10,7 +10,7 @@ namespace VendorTracker.Tests
     {
     public void Dispose()
     {
-      // Order.ClearAll();
+      Order.ClearAll();
     }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
