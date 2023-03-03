@@ -22,12 +22,25 @@ namespace VendorTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       //Arrange
-      string title = "Walk the dog.";
+      string title = "Order 1";
       //Act
       Order newOrder = new Order(title);
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(title, result);
+    }
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Order 1";
+      Order newOrder = new Order(title);
+      //Act
+      string updatedTitle = "Order 2";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
     }
   }
 }
