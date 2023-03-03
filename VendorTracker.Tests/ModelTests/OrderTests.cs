@@ -18,5 +18,16 @@ namespace VendorTracker.Tests
         Order newOrder = new Order("test vendor");
         Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      //Arrange
+      string title = "Walk the dog.";
+      //Act
+      Order newOrder = new Order(title);
+      string result = newOrder.Title;
+      //Assert
+      Assert.AreEqual(title, result);
+    }
   }
 }
