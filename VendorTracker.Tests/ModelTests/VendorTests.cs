@@ -10,7 +10,7 @@ namespace VendorTracker.Tests
     {
     public void Dispose()
     {
-      Vendor.ClearAll();
+      // Vendor.ClearAll();
     }
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
