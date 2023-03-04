@@ -1,25 +1,28 @@
 @{
   Layout = "_Layout";
 }
+<div>
   @using VendorTracker.Models;
+  <p>
   <h3>Vendor Name: @Model["vendor"].Name</h3>
-  <br>
-  <h5>Description: @Model["vendor"].Description</h5>
-  <br>
-  @if (@Model["orders"].Count == 0)
-    {
-      <h3>No orders have been added yet!</h3>
-    } 
+  <h5>Description: <p> @Model["vendor"].Description</h5>
+  </p>
+</div>
+<div>@if (@Model["orders"].Count == 0)
+  {
+    <h3>No orders have been added yet!</h3>
+  } 
   else 
   {
     <h4>Here are all the Orders for this @Model["vendor"].Name:</h4>
   <ol>
   @foreach (Order order in @Model["orders"])
   {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title : @order.Date</a></li>
   }
   </ol>
   }
-  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></p>
-  <p><a href='/vendors'>Return to Vendor list</a></p>
-  <p><a href='/'>Return Home</a></p>
+</div>
+<div>
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a><a href='/vendors'>Return to Vendor list</a><a href='/'>Return Home</a></p>
+</div>
