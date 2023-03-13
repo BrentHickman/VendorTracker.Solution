@@ -9,6 +9,7 @@
 * Dotnet 6
 * Html
 * Css
+* MsTest
 
 
 ## Vendor Tracker is an MVC application for users who want to track the Vendors they sell to. Users can create new Vendors to add to their list and can add orders to each vendor to stay on top of their production needs.
@@ -25,10 +26,13 @@
 > dotnet run
 * The application should the be available at:
 > https://localhost:5001/
+* To Run through through the MsTest pattern navigate to the VendorTracker.Tests directory
+* Then run the following command to run through the tests:
+> dotnet test
 
 ## Known Bugs
 
-* 
+* if you are experiencing any bugs please contact me here: brenthickman@ymail.com
 
 ## License
 
