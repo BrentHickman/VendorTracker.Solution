@@ -15,7 +15,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-        Order newOrder = new Order("test vendor");
+        Order newOrder = new Order("test vendor", "test description", 1, "test date");
         Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
@@ -24,7 +24,7 @@ namespace VendorTracker.Tests
       //Arrange
       string title = "Order 1";
       //Act
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "test description", 1, "test date");
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(title, result);
@@ -34,7 +34,7 @@ namespace VendorTracker.Tests
     {
       //Arrange
       string title = "Order 1";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "test description", 1, "test date");
       //Act
       string updatedTitle = "Order 2";
       newOrder.Title = updatedTitle;
@@ -58,8 +58,8 @@ namespace VendorTracker.Tests
       //Arrange
       string title01 = "Order 1";
       string title02 = "Order 2";
-      Order newOrder1 = new Order(title01);
-      Order newOrder2 = new Order(title02);
+      Order newOrder1 = new Order(title01, "test description", 1, "test date");
+      Order newOrder2 = new Order(title02, "test description", 1, "test date");
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       //Act
       List<Order> result = Order.GetAll();
@@ -71,7 +71,7 @@ namespace VendorTracker.Tests
     {
       //Arrange
       string title = "Order 1";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "test description", 1, "test date");
       //Act
       int result = newOrder.Id;
       //Assert
@@ -83,8 +83,8 @@ namespace VendorTracker.Tests
       //Arrange
       string title01 = "Order 1";
       string title02 = "Order 2";
-      Order newOrder1 = new Order(title01);
-      Order newOrder2 = new Order(title02);
+      Order newOrder1 = new Order(title01, "test description", 1, "test date");
+      Order newOrder2 = new Order(title02, "test description", 1, "test date");
       //Act
       Order result = Order.Find(2);
       //Assert
